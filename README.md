@@ -4,7 +4,7 @@
 
 #### 2.MVVM SAN.JS
 
-​	[MVVM](https://github.com/QingyiHuang/IFE/blob/master/MVVM/README.md)
+​	[MVVM](https://github.com/QingyiHuang/IFE-2018/tree/master/MVVM)
 
 #### 3.css3样式
 
