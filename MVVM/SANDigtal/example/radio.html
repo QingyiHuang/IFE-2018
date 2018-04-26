@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>start - radio</title>
+</head>
+
+<body>
+    <script src="./san.dev.js"></script>
+    <script>
+/*    var MyApp = san.defineComponent({
+        template: '<div>'
+            + '<label><input type="radio" value="errorrik" checked="{= online =}" name="online">errorrik</label>'
+            + '<label><input type="radio" value="otakustay" checked="{= online =}" name="online">otakustay</label>'
+            + '<label><input type="radio" value="firede" checked="{= online =}" name="online">firede</label>'
+            + '<br>{{online}}'
+            + '</div>',
+        initData: function () {
+            return {
+                online: 'errorrik'
+            };
+        }
+    });
+    var myApp = new MyApp();
+    myApp.attach(document.body);*/
+    var HqyApp = san.defineComponent({
+        template:'<div>'
+        +'<p>checkbox</p><span><input type="checkbox" value="HuangQingyi@github.com" checked="{= sel =}"></span>'
+        +'<br/><input placeholder="{{sel}}">'
+        +'</div>',
+        initData:function(){
+            return{
+                sel:[]
+            };
+        },
+        attached:function(){
+            this.data.set('sel',[]);
+        }
+
+    });
+    var happ=new HqyApp();
+    happ.attach(document.body);
+    </script>
+</body>
+</html>

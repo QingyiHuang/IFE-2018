@@ -1,0 +1,22 @@
+{
+  "name": "sandigtal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "loader-utils": "^1.1.0",
+    "san": "^3.5.7",
+    "san-loader": "^0.0.7",
+    "style-loader": "^0.21.0"
+  }
+}
