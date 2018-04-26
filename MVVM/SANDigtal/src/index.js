@@ -8,7 +8,7 @@ var msg = san.defineComponent({
 		+'<input type="text" placeholder="年龄(number)" value="{= age =}">'
 		+'<input type="text" placeholder="简介(string)" value="{= profile =}">'
 		+'</p>'
-		+'<label>信息： <input type="button" value="移除信息"></label>'
+		+'<label>信息： <input type="button" on-click="reset" value="移除信息"></label>'
 		+'<br/>'
 		+'<label>姓名:  <input style="border:0;border-bottom:1px solid #666666" value="{{name}}"></label><br/>'
 		+'<label>年龄:  <input style="border:0;border-bottom:1px solid #666666" value="{{age}}"></label><br/>'
@@ -18,7 +18,13 @@ var msg = san.defineComponent({
 			profile: DataTypes.string,
 			name: DataTypes.string,
 			age: DataTypes.number
-		}
-	});
+		},
+	    reset: function (){
+	    	this.data.set('name','');
+	    	this.data.set('age','');
+	    	this.data.set('profile','');
+	    }
+	    
+});
 var hqyMsg = new msg();
 hqyMsg.attach(document.body);
