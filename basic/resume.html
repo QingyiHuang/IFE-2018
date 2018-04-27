@@ -5,27 +5,104 @@
 	<title>resume</title>
 
 <style>
+	*{	margin: 0;	padding: 0;	}
 	.public-container{
-	position: relative;
-	margin: 0 auto;
-	width:1202px;
-	margin-top: 10px;
+		position: relative;
+		margin: 0 auto;
+		width:1202px;
+		border: 1px solid maroon;
+		border-top-style: none;
+		border-bottom-style: none;
+		clear: both;
 	}
 	.section1{
-	text-align: center;
+		text-align: center;
 	}
-	.section2{
-	margin-top: 50px;
+	.section3 p:nth-of-type(2n){
+		color:blue;
 	}
-	.section3 p:nth-child(1n){
-	color:blue;
+	.section3 p:nth-of-type(2n+1){
+		color:red;
 	}
-
+	.grayC{
+		color: gray;
+	}
+	.head a{
+		display: block;
+	}
+	.cicle1{
+		position: relative;
+		margin:0 auto;
+		width: 100px;
+		height: 100px;
+		overflow: hidden;
+	}
+	.wrap,.c_img,.border,.c_mask{
+		width: 100px;
+		height: 100px;
+	}
+	.wrap{
+		display: block;
+		position: relative;
+		margin:0 auto;
+	}
+	.c_img{
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		border-radius: 50%;
+		top:0px;
+	}
+	.wrap .border{
+		position: absolute;
+		border: 4px solid #fff;
+		top: -4px;
+		left: -4px;
+		border-radius: 50%;
+	}
+	.c_mask{
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 50%;
+		-webkit-transition:all 5s ease-in;
+		transition:all 0.5s ease-in;
+		color:rgba(255,255,255,0);
+	}
+	.wrap:hover .c_mask{
+		background-color:rgba(0,0,0,1);
+		color:rgba(255,255,255,1);
+	}
+	.info{
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		left: 0;
+		text-align: center;
+		-webkit-transform:translateY(-50%);
+	}
 </style>
 
 </head>
 <body>
+	<hr class="grayC" >
 	<div class="public-container section1">
+<!--		<div class="headP">
+			<span><a href="https://github.com/QingyiHuang"><img class="img-container" src="https://avatars3.githubusercontent.com/u/16174515?s=400&u=3b4d0748b9e585d4e0a196c31e6748e7a1be1899&v=4" alt="pic"></a></span>
+		</div>-->
+		<div class="cicle1">
+				<a href="https://github.com/QingyiHuang" class="wrap">
+					<div class="c_img" style="background-image:url(https://avatars3.githubusercontent.com/u/16174515?s=400&u=3b4d0748b9e585d4e0a196c31e6748e7a1be1899&v=4)"></div>
+						<div class="c_mask">
+							<div class="info">
+								<h3>头像</h3>
+								<p>link to git</p>
+							</div>
+						</div>
+						<div class="border"></div>
+				</a>
+		</div>
+
 		<h2>黄卿怡</h2>
 		<address>
 			<p>一名懒惰的gamer</p>
@@ -34,6 +111,7 @@
 			<p>love gaming on steam</p>
 		</address>
 	</div>
+	<hr class="grayC" >
 	<section class="public-container section2">
 		<ul>
 			<li>gulp+node+mongodb做了一个全栈DEMO</li>
@@ -41,6 +119,7 @@
 			<li>经历较少，实践较少，看的多不动手，忘得快，所以，心和身体一定要一同在路上</li>
 		</ul>
 	</section>
+	<hr class="grayC" >
 	<div class="public-container section3">
 
 		<p>HTML是什么，HTML5是什么</p>&nbsp<span>HTML 指的是超文本标记语言,HTML5 是最新的 HTML 标准。</span><br/>
@@ -61,5 +140,6 @@
 		<p>ol, ul, li, dl, dd, dt等这些标签都适合用在什么地方，举个例子</p>&nbsp<span>制作京东或者淘宝的导航条<a href="https://github.com/QingyiHuang/font-end-style/tree/master/%E7%94%B5%E5%95%86%E6%A8%AA%E5%90%91%E5%A4%A7%E5%9D%97%E5%AF%BC%E8%88%AA">这里是例子</a></span><br/>
 	</div>
 	<div class="public-container">...</div>
+	<hr class="grayC" >
 </body>
 </html>
