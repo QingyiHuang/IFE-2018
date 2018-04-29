@@ -25,5 +25,11 @@
 
 - san_form
 
+- san_slot
+
+- san_transition
+
+- san_component
+
   ​
 

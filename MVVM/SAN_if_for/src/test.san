@@ -1,0 +1,57 @@
+<template>
+    <div class="public_container">
+        <input type="button" value="增加">
+        <table class="examine">
+            <tr>
+                <th>姓名</th>
+                <th>审核状态</th>
+                <th>操作</th>
+            </tr>
+            <!--s-for循环 s-if条件渲染-->
+            <tr class="addd" s-for="p in persons">
+                <td>{{p.name}}</td>
+                <td>{{p.examine}}</td>
+                <td>
+                    <input type="button" s-if="p.status==='1'||p.status==='2'" value="审核">
+                    <input type="button" s-if="p.status==='0'" value="删除">
+                </td>
+            </tr>
+        </table>
+    </div>
+</template>
+<script>
+export default {
+    initData(){
+        return{
+            t1:"hexo",
+            persons:[
+                {name:'张三',examine:'未审核',status:'0'},
+                {name:'李四',examine:'合格',status:'1'},
+                {name:'王五',examine:'不合格',status:'2'}
+            ]
+        };
+    }
+}
+</script>
+<style>
+    .public_container{
+        margin: 200px auto;
+        width: 240px;
+    }
+    .examine{
+        margin-top: 5px;
+        text-align: center;
+        width: 240px;
+        border-collapse: collapse;
+        color: #999;
+    }
+    .examine,.examine th,.examine tr,.examine td,.addd{
+        border: 1px solid  #999;
+    }
+    input[type="button"]{
+        border-radius: 10%;
+        background-color: #999;
+        cursor: pointer;
+    }
+    
+</style>
