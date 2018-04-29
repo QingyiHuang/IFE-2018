@@ -21,6 +21,7 @@
 </template>
 <script>
 export default {
+    /*初始化数据*/
     initData(){
         return{
             persons:[
@@ -30,12 +31,15 @@ export default {
             ]
         };
     },
+    /*审核*/
     judge: function(person){
         this.data.set(`persons[${person}].status`,'1')
     },
+    /*删除*/
     delete: function(person){
         this.data.splice(`persons`,[person,1])
     },
+    /*添加*/
     addPerson:function(){
         var num =parseInt(Math.random()*(3),10);
         this.data.push(`persons`,
