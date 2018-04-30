@@ -6,6 +6,29 @@
 
 <style>
 	*{	margin: 0;	padding: 0;	}
+	a{
+		text-decoration: none;
+	}
+	address a:link {
+		color: blue;
+	}
+	ul{
+		list-style-image:url(./bone.png);
+	}
+	ul li{
+		line-height: 29px;
+	}
+	address a:visited {
+		color: purple;
+	}
+
+	address a:focus, a:hover {
+		border-bottom: 1px solid;
+	}
+
+	address a:active {
+		color: red;
+	}
 	.public-container{
 		position: relative;
 		margin: 0 auto;
@@ -81,6 +104,24 @@
 		text-align: center;
 		-webkit-transform:translateY(-50%);
 	}
+	.basic_4{
+		margin-top:30px;
+	}
+	.border{
+		position: relative;
+		float: left;
+		width: 350px;
+	}
+	.list{
+		position: relative;
+		float: left;
+		width: 500px;
+	}
+	.basic_4 p{
+		margin-top:10px;
+		width: 300px;
+	}
+	
 </style>
 
 </head>
@@ -141,5 +182,62 @@
 	</div>
 	<div class="public-container">...</div>
 	<hr class="grayC" >
+
+	<div class="basic_4 public-container">
+		<div class="border">
+			<p style="background-color:#fff;border-style: solid;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: solid</p>
+			<p style="background-color:#fff;border-style: dotted;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: dotted</p>
+			<p style="background-color:#fff;border-style: dashed;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: dashed</p>
+			<p style="background-color:#fff;border-style: double;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: double</p>
+			<p style="background-color:#fff;border-style: groove;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: groove</p>
+			<p style="background-color:#fff;border-style: hidden;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: hidden</p>
+			<p style="background-color:#fff;border-style: ridge;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: ridge</p>
+			<p style="background-color:#fff;border-style: outset;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: outset</p>
+			<p style="background-color:#fff;border-style: inset;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: inset</p>
+			<p style="background-color:#fff;border-style: inherit;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: inherit</p>
+			<p style="background-color:#fff;border-style: none;border-width:1px 2px 3px 4px;border-color: green yellow red orchid">border-style: none</p>
+		</div>
+		<div class="list">
+				<code>
+						list-style-type ：设置用于列表的项目符号的类型，例如无序列表的方形或圆形项目符号，或有序列表的数字，字母或罗马数字。
+						list-style-position ：设置在每个项目开始之前，项目符号是出现在列表项内，还是出现在其外。
+						list-style-image ：允许您为项目符号使用自定义图片，而不是简单的方形或圆形。
+				</code>
+				<h2>html中的无序list</h2>
+
+				<p>ul li list</p>
+				
+				<ul>
+					<li>Humous</li>
+					<li>Pitta</li>
+					<li>Green salad</li>
+					<li>Halloumi</li>
+				</ul>
+				
+				<h2>有序list</h2>
+				
+				<p>ol li</p>
+				
+				<ol>
+				<li>Toast pitta, leave to cool, then slice down the edge.</li>
+				<li>Fry the halloumi in a shallow, non-stick pan, until browned on both sides.</li>
+				<li>Wash and chop the salad.</li>
+				<li>Fill pitta with salad, humous, and fried halloumi.</li>
+				</ol>
+				
+				<h2>内容描述列表t</h2>
+				
+				<p>dl dt dd.</p>
+				
+				<dl>
+				<dt>Humous</dt>
+				<dd>A thick dip/sauce generally made from chick peas blended with tahini, lemon juice, salt, garlic, and other ingredients.</dd>
+				<dt>Pitta</dt>
+				<dd>A soft, slightly leavened flatbread.</dd>
+				</dl>
+		</div>
+	</div>
+
+	
 </body>
 </html>
