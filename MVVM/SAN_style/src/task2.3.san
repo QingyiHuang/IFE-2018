@@ -1,18 +1,42 @@
 <template>
-    <div class="block {{flag ? 'divRed':'divBlue'}}" on-click="itemClick()"></div>
+    <div class="root">
+        <!--class way-->
+        <div class="block {{flag ? 'divRed':'divBlue'}}" on-click="itemClick()"></div>
+        <!--style way-->
+        <div class="block2" style="{{b2Color ? 'background-color:'+b2Color :'' }}" on-click="change2()"></div>
+    </div>
 </template>
 
 <script>
 export default {
     initData:function(){
         return{
-            flag:true
+            flag:true,
+            b2Color: 'pink'
         }
-    },//js 的 toggle
+    },
+    //js 的 toggle
     itemClick: function(){
         let flags = this.data.get('flag');
         console.log(flags);
         this.data.set('flag',!(flags));
+    },
+    //style way
+    change2: function(){
+        /*switch(this.data.get('b2Color')){
+            case 'pink':
+                this.data.set('b2Color', 'maroon')
+                break;
+            case 'maroon':
+                this.data.set('b2Color', 'pink')
+                break;
+        }*/
+        let bgc=this.data.get('b2Color');
+        if(bgc == 'pink'){
+            this.data.set('b2Color','maroon')
+        } else{
+            this.data.set('b2Color','pink')
+        }
     }
 }
 </script>
@@ -20,6 +44,11 @@ export default {
 <style>
     .block{
         margin: 200px auto;
+        width: 100px;
+        height: 100px;
+    }
+    .block2{
+        margin: 300px auto;
         width: 100px;
         height: 100px;
     }
