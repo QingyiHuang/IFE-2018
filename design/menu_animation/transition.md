@@ -37,5 +37,5 @@ a.foo:hover {
   transition: background 0.3s ease;
 ```
 
-#### 四种曲线
+#### [四种曲线](https://github.com/QingyiHuang/IFE-2018/blob/master/design/menu_animation/%E6%9B%B2%E7%BA%BF.png)
 
