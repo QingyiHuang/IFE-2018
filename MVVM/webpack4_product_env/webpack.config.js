@@ -6,12 +6,14 @@ module.exports = {
   // webpack 开始打包
 
   output: {
-    filename: 'bundle.js',
-    // 「入口分块(entry chunk)」的文件名模板  出口分块
-    path: path.resolve(__dirname, 'dist')
+
+    path: path.resolve(__dirname, 'dist'),
     // 所有输出文件的目标路径
     // 必须是绝对路径（使用 Node.js 的 path 模块）
-
+    filename: 'bundle.js',
+    // 「入口分块(entry chunk)」的文件名模板  出口分块
+    publicPath: 'dist/'
+    //解决bundle的sourcefile引入路径bug
   },
   module: {
     // 关于模块配置
@@ -25,6 +27,12 @@ module.exports = {
        ]
      },
      {
+      test: /\.js$/,
+      use: 'babel-loader',
+      include: /src/, // 只转化src目录下的js
+      exclude: /node_modules/ // 排除掉node_modules，优化打包速度
+     },
+     {
        test: /\.san$/,
        use: [
          'san-loader'
@@ -32,12 +40,22 @@ module.exports = {
      },
      {
        test: /\.(png|svg|jpg|gif)$/,
-       use: [
-         'file-loader'
-       ]
+       use:{
+         loader:'file-loader',
+         query:{
+           name:'images/[hash].[ext]'
+         }
+       }
      }
    ]
- },
+ },  
+ devServer: {
+  contentBase: './dist',
+  host: 'localhost', // 默认是localhost
+  port: 3000, // 端口
+  open: false, // 自动打开浏览器
+  hot: true // 开启热更新
+},
   resolve: {
     // 解析模块请求的选项
     // （不适用于对 loader 解析）
