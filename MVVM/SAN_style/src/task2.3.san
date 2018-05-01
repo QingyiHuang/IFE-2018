@@ -4,15 +4,15 @@
 
 <script>
 export default {
-    initData(){
+    initData:function(){
         return{
-            flag:true;
+            flag:true
         }
-    }
+    },//js 的 toggle
     itemClick: function(){
         let flags = this.data.get('flag');
         console.log(flags);
-        this.data.set('flag',!(flag));
+        this.data.set('flag',!(flags));
     }
 }
 </script>

@@ -152,10 +152,11 @@ eval("module.exports = \"\\n<div class=\\\"block {{flag ? 'divRed':'divBlue'}}\\
 /*!*********************************************************************************************************!*\
   !*** ./node_modules/_san-loader@0.0.7@san-loader/lib/selector.js?type=script&index=0!./src/task2.3.san ***!
   \*********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (9:21)\\nYou may need an appropriate loader to handle this file type.\\n|     initData(){\\r\\n|         return{\\r\\n|             flag:true;\\r\\n|         }\\r\\n|     }\\r\");\n\n//# sourceURL=webpack:///./src/task2.3.san?./node_modules/_san-loader@0.0.7@san-loader/lib/selector.js?type=script&index=0");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// <template>\n//     <div class=\"block {{flag ? 'divRed':'divBlue'}}\" on-click=\"itemClick()\"></div>\n// </template>\n//\n// <script>\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    initData:function(){\r\n        return{\r\n            flag:true\r\n        }\r\n    },//js 的 toggle\r\n    itemClick: function(){\r\n        let flags = this.data.get('flag');\r\n        console.log(flags);\r\n        this.data.set('flag',!(flags));\r\n    }\r\n});\r\n// </script>\n//\n// <style>\n//     .block{\n//         margin: 200px auto;\n//         width: 100px;\n//         height: 100px;\n//     }\n//     .divRed{\n//         background-color: red;\n//     }\n//     .divBlue{\n//         background-color: blue;\n//     }\n// </style>\n\n\n//# sourceURL=webpack:///./src/task2.3.san?./node_modules/_san-loader@0.0.7@san-loader/lib/selector.js?type=script&index=0");
 
 /***/ }),
 
