@@ -1,0 +1,32 @@
+<template>
+    <div class="block {{flag ? 'divRed':'divBlue'}}" on-click="itemClick()"></div>
+</template>
+
+<script>
+export default {
+    initData(){
+        return{
+            flag:true;
+        }
+    }
+    itemClick: function(){
+        let flags = this.data.get('flag');
+        console.log(flags);
+        this.data.set('flag',!(flag));
+    }
+}
+</script>
+
+<style>
+    .block{
+        margin: 200px auto;
+        width: 100px;
+        height: 100px;
+    }
+    .divRed{
+        background-color: red;
+    }
+    .divBlue{
+        background-color: blue;
+    }
+</style>
