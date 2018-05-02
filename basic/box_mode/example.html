@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>box_mode</title>
+
+<style>
+    html{
+        font-family: sans-serif;
+        background: #ccc;
+    }
+    .one,.two{
+        background: red;
+        width: 300px;
+        height: 150px;
+        padding: 20px;
+        border: 10px solid black;
+        margin: 20px auto;
+    }
+
+</style>
+
+</head>
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+
+<script>
+    var div1=document.querySelector('.one');
+    var div2=document.querySelector('.two');
+    var toy=function(divs){
+        var width = divs.offsetWidth;
+        var height = divs.offsetHeight;
+        divs.textContent="width"+width +"px height"+height+"px";
+    }
+    toy(div1);
+    toy(div2);
+</script>
+
+</body>
+</html>
