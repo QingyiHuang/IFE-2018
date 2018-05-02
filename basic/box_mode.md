@@ -76,7 +76,7 @@ outputWH(two);
 }
 ```
 
-![img]()
+![img](https://github.com/QingyiHuang/IFE-2018/blob/master/basic/box_mode/box-model-alt-small.png)
 
 
 
