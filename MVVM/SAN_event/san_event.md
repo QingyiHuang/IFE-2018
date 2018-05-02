@@ -130,3 +130,100 @@ var MyComponent = san.defineComponent({
 ```
 
 有时候组件封装了一些基础结构和样式，同时希望点击、触摸等 DOM 事件由外部使用方处理。如果组件需要 fire 每个根元素 DOM 事件是很麻烦并且难以维护的。native 修饰符解决了这个问题。
+
+
+
+
+
+## SAN事件通信，以及事件处理相关api
+
+### fire
+
+- 派发一个自定义事件，san为组件提供了自定义事件功能，组件开发者可以通过改方法派发事件，事件可以在视图模板中通过“on-”的方式绑定监听，亦可通过组件实例on方法监听
+- 用法：fire({str},eventArgument)
+
+```
+var Label = san.defineComponent({
+    template: '<template class="ui-label"><a on-click="clicker" title="{{text}}">{{text}}</a></template>',
+
+    clicker: function () {
+        this.fire('customclick', this.data.get('text') + ' clicked');
+    }
+});
+
+var MyComponent = san.defineComponent({
+    initData: function () {
+        return {name: 'San'};
+    },
+
+    components: {
+        'ui-label': Label
+    },
+
+    template: '<div><ui-label text="{{name}}" on-customclick="labelClicker($event)"></ui-label></div>',
+
+    labelClicker: function (doneMsg) {
+        alert(doneMsg);
+    }
+});
+```
+
+### dispatch
+
+- 派发一个消息，消息将沿着组件树向上传递，直到遇到第一个处理该消息的组件，上层组件通过massages声明组件要处理的消息，消息主要用于组件与非owner的上层组件进行通信
+
+###### 消息
+
+通过 **dispatch** 方法，组件可以向组件树的上层派发消息。
+
+```
+var SelectItem = san.defineComponent({
+    template: '<li on-click="select"><slot></slot></li>',
+
+    select: function () {
+        var value = this.data.get('value');
+
+        // 向组件树的上层派发消息
+        this.dispatch('UI:select-item-selected', value);
+    }
+});
+```
+
+消息将沿着组件树向上传递，直到遇到第一个处理该消息的组件，则停止。通过 **messages**可以声明组件要处理的消息。**messages** 是一个对象，key 是消息名称，value 是消息处理的函数，接收一个包含 target(派发消息的组件) 和 value(消息的值) 的参数对象。
+
+```
+var Select = san.defineComponent({
+    template: '<ul><slot></slot></ul>',
+
+    // 声明组件要处理的消息
+    messages: {
+        'UI:select-item-selected': function (arg) {
+            var value = arg.value;
+            this.data.set('value', value);
+
+            // arg.target 可以拿到派发消息的组件
+        }
+    }
+});
+```
+
+消息主要用于组件与非 **owner** 的上层组件进行通信。比如，slot 内组件 SelectItem 的 **owner** 是更上层的组件，但它需要和 Select 进行通信。
+
+```
+san.defineComponent({
+    components: {
+        'ui-select': Select,
+        'ui-selectitem': SelectItem
+    },
+
+    template: ''
+        + '<div>'
+        + '  <ui-select value="{=value=}">'
+        + '    <ui-selectitem value="1">one</ui-selectitem>'
+        + '    <ui-selectitem value="2">two</ui-selectitem>'
+        + '    <ui-selectitem value="3">three</ui-selectitem>'
+        + '  </ui-select>'
+        + '</div>'
+});
+```
+定义子组件的名称时不能用大写字母.
