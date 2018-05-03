@@ -1,6 +1,6 @@
 import san from 'san';
-import son from './child.san';
+import grandfather from './grandfather.san';
 
-var hqy=new son();
+var hqy=new grandfather();
 
 hqy.attach(document.body);

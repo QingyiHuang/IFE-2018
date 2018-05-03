@@ -1,0 +1,31 @@
+<template>
+    <div>
+        <ui-father></ui-father>
+        <div>
+            <label>I'm grandfather <input type="text" placeholder="{{placeholder}}" class="{{getMsg?'got':''}}" value="{{value}}"></label>
+        </div>
+    </div>
+</template>
+<script>
+import father from './father.san'
+export default {
+    initData(){
+        return{
+            getMsg:false,
+            placeholder:"等grandson's信息"
+        }
+    },
+    components:{
+        'ui-father':father
+    },
+    messages:{
+        'UI:grandson-info'(childMsg){
+            //valuable dispatched become a object，than parents messages get the object，parce object.value
+            //console.log(childMsg);
+            //console.log(childMsg.value);
+            this.data.set('value',childMsg.value);
+            this.data.set('getMsg',true);
+        }
+    }
+}
+</script>

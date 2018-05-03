@@ -1,0 +1,37 @@
+<template>
+    <div>
+        <ui-child></ui-child>
+        <br>
+        <div>
+            <label>I'm father<input type="text" placeholder="{{ placeholder }}" class="{{getMsg?'got':''}}" value="{{ value }}"></label>
+        </div>
+    </div>  
+</template>
+<script>
+import child from './child.san';
+export default {   
+    components:{
+        'ui-child':child,
+    },
+    initData(){
+        return{
+            getMsg: false,
+            placeholder: "等son's information"
+        }
+    },
+    messages:{
+        'UI:child-info'(childMsg){
+            //console.log(childMsg);
+            this.data.set('value',childMsg.value);
+            this.data.set('getMsg',true);
+            this.dispatch('UI:grandson-info',childMsg.value);
+        }
+    }
+}
+</script>
+<style>
+.got{
+    color:red;
+    border:1px solid blue;
+}
+</style>

@@ -1,23 +1,14 @@
 <template>
     <div>
-        <input class="childClass" type="text" value="{{ childMsg }}">
+        <input class="childClass" type="text" value="{= childMsg =}">
         <button on-click="deliver()">通知父组件</button>
     </div>
 </template>
 <script>
 export default {
-    components:{
-        'ui-child':'self'
-    },
     deliver:function(){
-        var msg=this.data.get(childMsg);
-        console.log(msg);
-        this.dispatch('UI:child-info',msg)
-    },
-    messages:{
-        'UI:child-info'(msg){
-            console.log(msg);
-        }
+        var childMsg=this.data.get('childMsg');
+        this.dispatch('UI:child-info',childMsg);
     }
 }
 </script>
