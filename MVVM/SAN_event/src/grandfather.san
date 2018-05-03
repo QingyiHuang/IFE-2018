@@ -1,8 +1,9 @@
 <template>
     <div>
-        <ui-father></ui-father>
+        <!--bind father 的插槽值-->
+        <ui-father value='{{value}}'></ui-father>
         <div>
-            <label>I'm grandfather <input type="text" placeholder="{{placeholder}}" class="{{getMsg?'got':''}}" value="{{value}}"></label>
+            <label>I'm grandfather <input type="text" placeholder="{{placeholder}}" class="{{getMsg?'got':''}}" value="{= value =}"></label>
         </div>
     </div>
 </template>
@@ -20,6 +21,7 @@ export default {
     },
     messages:{
         'UI:grandson-info'(childMsg){
+            //查看传输的过程，数据格式
             //valuable dispatched become a object，than parents messages get the object，parce object.value
             //console.log(childMsg);
             //console.log(childMsg.value);

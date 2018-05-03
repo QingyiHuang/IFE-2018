@@ -1,9 +1,9 @@
 <template>
     <div>
-        <ui-child></ui-child>
+        <ui-child childMsg='{{value}}'></ui-child>
         <br>
         <div>
-            <label>I'm father<input type="text" placeholder="{{ placeholder }}" class="{{getMsg?'got':''}}" value="{{ value }}"></label>
+            <label>I'm father<input type="text" placeholder="{{ placeholder }}" class="{{getMsg?'got':''}}" value="{= value =}"></label>
         </div>
     </div>  
 </template>
