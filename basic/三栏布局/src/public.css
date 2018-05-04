@@ -1,0 +1,125 @@
+html{
+    font-family: '微软雅黑';
+    zoom:1;
+}
+*{/*盒模型解决 支持IE8+*/
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img{
+	border: none;
+	display: block;
+}
+Img,input,select,textarea
+{
+	vertical-align:middle;
+}
+ol,ul,li{
+	list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+a:link{
+    color: #ffffff;
+}
+.clearfloat{
+	zoom:1;/*清除浮动、清除margin的重叠等。*/
+}
+/*为了布局时看清楚各DIV盒子的轮廓，页面完成后须删除*/     
+
+.public_container{
+    margin: 0 auto;
+    width: 960px;
+}
+.head{
+    height: 80px;
+    background: #333333;
+}
+.head .nav{
+    height: 80px;
+}
+.head .nav h2{
+    float: left;
+    color: #ffffff;
+    line-height: 80px;
+}
+.head .nav a{
+    margin-left: 10px;
+    float: right;
+    line-height: 80px;
+}
+.banner{
+    height: 300px;
+    background: #66bb33;
+}
+.banner .b_img{
+    height: 300px;
+}
+.banner .banBtns{
+    float: right;
+    margin: 250px auto;
+    margin-bottom: 0px;
+    width: 154px;
+}
+.banBtns .btn{
+    display: block;
+    float: left;
+    width: 30px;
+    height: 36px;
+    text-align: center;
+    color: #749f5b;
+    line-height: 36px;
+    background: #b2dd99;
+    margin-left: 8px;
+    -webkit-transition:  .1s ease-in;
+    transition:  .1s ease-in
+}
+.banner .btn:hover{
+    height: 44px;
+    cursor: pointer;
+}
+
+.main{
+    height: 650px;
+}
+.main_nav{
+    margin-top: 22px;
+    height: 52px;
+}
+.nav_line{
+    color: #666666;
+    width: 100%;
+    clear: both;
+}
+.main_nav div{
+    float: left;
+    width: 112px;
+    height: 52px;
+    background: #eee;
+    text-align: center;
+    line-height: 52px;
+    border:1px solid #666666; 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.main_nav div:hover{
+    border-bottom: none;
+    cursor: pointer;
+}
+.footer{
+    height: 120px;
+    background: #666666;
+    text-align: center;
+}
+.footer div{
+    height: 120px;
+}
+.footer p{
+    margin-top: 20px;
+    color: #ffffff;
+}

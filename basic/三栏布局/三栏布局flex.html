@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>three column layout</title>
+    <link rel="stylesheet" href="./src/public.css">
+<style>
+.content{
+    display: flex;
+}
+    .content .cl:nth-of-type(1){
+    width: 200px;
+    height: 600px;
+    background: midnightblue;
+}
+
+.content .cl:nth-of-type(2){
+    height: 600px;
+    background: green;
+    flex: 1 /*flex 1*/
+}
+.content .cl:nth-of-type(3){
+    width: 200px;
+    height: 600px;
+    background: midnightblue;
+}
+</style>
+    
+</head>
+<body>
+    <div class="head">
+        <div class="nav public_container">
+            <h2>Logo</h2>
+            <a href="##">Login</a>
+            <a href="##">Register</a>
+            <a href="https://github.com/QingyiHuang">Github</a>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="b_img public_container">
+                <div class="banBtns">
+                        <span class="btn">1</span><span></span>  
+                        <span class="btn">2</span><span></span>  
+                        <span class="btn">3</span><span></span>  
+                        <span class="btn">4</span><span></span>  
+                </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main_nav public_container">
+            <div>HOME</div>
+            <div>CATOGORISE</div>
+            <div>ABOUT</div>
+        </div>
+        <hr class="nav_line">
+        <div class="content public_container">
+            <!--main-->
+            <div class="cl">guding</div>
+            <div class="cl">自适应</div>
+            <div class="cl">guding</div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="public_container">
+            <p>@ 2018 ife.baidu.com</p>
+        </div>
+
+    </div>
+</body>
+</html>
