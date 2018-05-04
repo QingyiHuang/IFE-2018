@@ -1,0 +1,20 @@
+div:nth-of-type(1){
+    height: 80px;
+    background: gray;
+    text-align: center;
+    line-height: 80px;
+}
+div h3{
+    float: left;
+    width: 160px;
+    height: 160px;
+    line-height: 160px;
+    text-align: center;
+    background: rebeccapurple;
+}
+div{
+    float: right;
+    width: 1040px;
+    height: 160px;
+    
+}

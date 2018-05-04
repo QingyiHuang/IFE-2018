@@ -1,0 +1,37 @@
+html{
+    font-family: '微软雅黑';
+    zoom:1;
+}
+*{/*盒模型解决 支持IE8+*/
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img{
+	border: none;
+	display: block;
+}
+Img,input,select,textarea
+{
+	vertical-align:middle;
+}
+ol,ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.clearfloat{
+	zoom:1;/*清除浮动、清除margin的重叠等。*/
+}
+/*为了布局时看清楚各DIV盒子的轮廓，页面完成后须删除*/     
+div{ 
+    border:1px solid red;
+} 
+body{
+    width: 1200px;
+    min-width: 800px;
+    margin: 50px auto;
+}

@@ -1,0 +1,16 @@
+body{
+    width: 800px;
+}
+div:nth-of-type(1){
+    float: left;
+    width: 30%;
+    background:#3399ff;
+    height: 484px;
+    text-align: center;
+    line-height: 484px;
+}
+div{
+    float: right;
+    width: 70%;
+    overflow: hidden;
+}
