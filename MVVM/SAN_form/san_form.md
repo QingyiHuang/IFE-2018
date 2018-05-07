@@ -80,7 +80,7 @@ san.defineComponent({
 select 的使用方式和输入框类似，直接对 value 属性应用双向绑定。
 
 ```
-<!-- Template -->
+<!-- Template -->++-+
 <select value="{= online =}">
     <option value="errorrik">errorrik</option>
     <option value="otakustay">otakustay</option>

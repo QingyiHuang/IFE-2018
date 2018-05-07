@@ -1,0 +1,43 @@
+<template>
+    <div>
+    <!--input-->
+        <h4>input组件 利用san表单api实现</h4>
+        <san-input
+            value="{= value =}"
+            placeholder="{{holder}}"
+            on-input="handleInput($event)"
+            on-focus="handleFocus($event)"
+            on-blur ="handleBlur($event)"
+            readonly="false"
+            disabled="false"
+        ></san-input>
+        <p>当前输入框状态 {{inputStatu}}</p>
+    <!--checkbox-->
+    </div>
+</template>
+<script>
+import input from './input.san';
+export default {
+    components:{
+        'san-input' : input
+    },
+    initData(){
+        return{
+            holder: "这里是占位符"
+        }
+    },
+    handleBlur($event) {
+        console.log($event);
+        this.data.set('inputStatu',"失去焦点"+$event);
+        //可以处理正则验证
+    },
+    handleFocus($event) {
+        console.log($event);
+        this.data.set('inputStatu',"获得焦点"+$event)
+    },
+    handleInput($event) {
+        console.log($event);
+        this.data.set('inputStatu',"正在输入"+$event)
+    },
+}
+</script>

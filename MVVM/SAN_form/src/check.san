@@ -1,0 +1,39 @@
+<!--
+ Checkbox
+
+props
+
+  属性           	类型     	必须    	默认值  	说明                                      
+  checked      	Boolean	string	false	组件的值，如果使用了trueValue和falseValue则为对应字符串，否则为boolean
+  disabled     	Boolean	false 	false	是否禁用当前项                                 
+  trueValue    	String 	false 	-    	选中时的值                                   
+  falseValue   	String 	false 	-    	未选中时的值                                  
+  indeterminate	Boolean	false 	false	设置 indeterminate 状态，只负责样式控制             
+
+event
+
+  事件       	说明                            	返回值     
+  on-change	触发原生的change事件，通过修改外部的数据改变时不会触发	events对象
+
+-->
+<template>
+    <input
+        type="checkbox"
+        checked='{{checked? true:false}}'
+        disabled='{{disabled}}'
+        on-change="handleChange"
+    />
+</template>
+<script>
+export default {
+    initData(){
+        disabled:'false',
+        checked:'false'
+    },
+    handleChange(e){
+        this.fire('change',e);//定义on-change
+        this.data.set('checked',this.checked)
+    },
+}
+</script>
+
