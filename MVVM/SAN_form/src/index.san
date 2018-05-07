@@ -13,13 +13,19 @@
         ></san-input>
         <p>当前输入框状态 {{inputStatu}}</p>
     <!--checkbox-->
+        <san-checkbox
+            checked="false"
+        >
+        </san-checkbox>
     </div>
 </template>
 <script>
 import input from './input.san';
+import checkbox from './check.san';
 export default {
     components:{
-        'san-input' : input
+        'san-input' : input,
+        'san-checkbox' : checkbox
     },
     initData(){
         return{

@@ -19,7 +19,7 @@ event
 <template>
     <input
         type="checkbox"
-        checked='{{checked? true:false}}'
+        checked='{{isChecked? true:false}}'
         disabled='{{disabled}}'
         on-change="handleChange"
     />
@@ -27,12 +27,13 @@ event
 <script>
 export default {
     initData(){
-        disabled:'false',
-        checked:'false'
+        return{
+            disabled:'false',
+            isChecked:false
+        }
     },
     handleChange(e){
         this.fire('change',e);//定义on-change
-        this.data.set('checked',this.checked)
     },
 }
 </script>
