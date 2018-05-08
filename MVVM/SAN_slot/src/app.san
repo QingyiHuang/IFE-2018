@@ -1,0 +1,39 @@
+<template>
+    <div class="container">
+        <task-menu data="{{cunt}}" s-ref="hook">
+            <div class="title">
+                <h4>title: {{title}}</h4>
+            </div>
+            <div class="content">
+                <p>content: {{content}}</p>
+                <p>date: {{date}}</p>
+            </div>
+        </task-menu>
+    </div>
+</template>
+<script>
+import task from './slot.san';
+export default {
+    components:{
+        'task-menu':task,
+    },
+    data:{
+        cunt:[1,2],
+        title:'task1',
+        content:'今日(5月8日)，育碧公布了《彩虹六号：围攻》的第三年第二赛季新内容，游戏的新赛季命名为“备战行动”(Operation Para Bellum)，“Para Bellum” 一词来源于拉丁语，其意思是“欲求和平，必先备战”，这刚好印证了之前游戏在推特上公布的那张预告图片。而在此次的行动中，将有两位来自意大利反恐小队的特勤干员加入到防守方阵营之中。',
+        date:'2018/5/8',
+        hook:[
+            {title:'task1',content:'今日(5月8日)，育碧公布了《彩虹六号：围攻》的第三年第二赛季新内容，游戏的新赛季命名为“备战行动”(Operation Para Bellum)，“Para Bellum” 一词来源于拉丁语，其意思是“欲求和平，必先备战”，这刚好印证了之前游戏在推特上公布的那张预告图片。而在此次的行动中，将有两位来自意大利反恐小队的特勤干员加入到防守方阵营之中。',date:'2018/5/8'},
+            {title:'task2',content:'全新赛季“备战行动”将会引入全新的“选用及禁用”(Pick & Ban)系统。由此，在赛前阶段的准备也为游戏增添了另一种层面的策略和博弈，因为两队之间将各自设法保留自己所希望选用的干员并同时禁用其他干员以破坏对手的计划。',date:'2018/1/1'},
+        ]
+    }
+
+}
+</script>
+<style>
+*{margin: 0;padding: 0;}
+.container{
+    margin: 50px auto;
+    width: 1000px;
+}
+</style>
