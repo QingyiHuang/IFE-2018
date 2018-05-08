@@ -1,7 +1,12 @@
 <!--san的绑定数据这些权值以申明slot 的 defineComponent 为大-->
 <template>
-    <div class="block">
-        <slot s-for="item in data"> 
+    <div>
+        <slot 
+            s-for="item in data"
+            var-title="item.title"
+            var-content="item.content"
+            var-date="item.date"
+        >   
         </slot>
     </div>
 </template>
@@ -13,24 +18,17 @@ export default {
 
 <style>
 *{box-sizing: border-box};
-.block{
-    width: 300px;
-    height: 300px;
-    background: #ffffcc;
-    border: 1px solid maroon;
-}
     .title{
         margin:10px auto;
-        width: 30px;
-        height: 10px;
+        width: 60px;
+        height: 30px;
         background: #ff9900;
         text-align: center;
-        line-height: 10px;
+        line-height: 30px;
     }
     .content{
         margin:10px auto;
         width: 200px;
-        height: 100px;
         border: 1px solid maroon;
         background: cornflowerblue;
         padding: 10px;
